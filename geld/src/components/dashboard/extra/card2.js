@@ -14,9 +14,10 @@ export default function Card2() {
         <main className="flex flex-col ">
           <h1>
             {isReadyRecord &&
-              recordData
-                .filter((record) => record.isExpense === false)
-                .reduce((a, b) => a + Number(b.amount), 0)}
+             new Intl.NumberFormat().format(recordData
+              .filter((record) => record.isExpense === false)
+              .reduce((a, b) => a + Number(b.amount), 0))
+            }
           </h1>
           <p>Your Income Amount</p>
         </main>

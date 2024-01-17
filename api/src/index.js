@@ -16,12 +16,6 @@ app.use(bodyParser.json());
 app.post("/sign-in", async (req, res) => {
   const { email, password } = req.body;
 
-  // const filePath = "src/data/users.json";
-
-  // const usersRaw = await fs.readFile(filePath, "utf8");
-
-  // const users = JSON.parse(usersRaw);
-
   const user = await User.findOne({ userEmail: email });
 
   if (!user) {

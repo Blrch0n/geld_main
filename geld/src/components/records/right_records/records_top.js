@@ -23,11 +23,13 @@ export default function HeaderRecords() {
           <input type="checkbox"></input>
           <label>Select all</label>
         </span>
-        <p>
+        <p className='text-[#0166FF]'>
           {isReadyRecord &&
-            recordData.reduce(
-              (total, currentValue) => total + Number(currentValue.amount),
-              0
+            new Intl.NumberFormat().format(
+              recordData.reduce(
+                (total, currentValue) => total + Number(currentValue.amount),
+                0
+              )
             )}
         </p>
       </div>

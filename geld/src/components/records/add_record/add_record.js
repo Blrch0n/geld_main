@@ -16,7 +16,7 @@ export default function AddRecord() {
   const [openCategory, setOpenCategory] = useState(false);
   const [selectedIconRecord, setSelectedIconRecord] =
     useState("GrAccessibility");
-  const [RecordColor, setRecordColor] = useState("#000");
+  const [RecordColor, setRecordColor] = useState("#FF7B01");
   const [selectedCategory, setSelectedCategory] = useState();
   const Icon = icons[selectedIconRecord];
   return (
