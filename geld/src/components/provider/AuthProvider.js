@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
       setIsLoggedIn(true);
 
-      useRefresh(refresh + 1);
+      setRefresh(refresh + 1);
 
       router.push("/dashboard");
       // showOn();
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
       setIsLoggedIn(true);
 
-      useRefresh(refresh + 1);
+      setRefresh(refresh + 1);
 
       router.push("/dashboard");
       // showOn();
@@ -100,7 +100,7 @@ export const AuthProvider = ({ children }) => {
           },
         }
       );
-      useRefresh(refresh + 1);
+      setRefresh(refresh + 1);
     } catch (err) {
       console.log(err);
     }
@@ -133,7 +133,7 @@ export const AuthProvider = ({ children }) => {
           },
         }
       );
-      useRefresh(refresh + 1);
+      setRefresh(refresh + 1);
     } catch (err) {
       console.log(err);
     }
