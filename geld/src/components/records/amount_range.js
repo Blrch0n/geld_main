@@ -30,9 +30,10 @@ export default function AmountRange() {
           type="range"
           className="w-full"
           min="0"
-          max="100000"
+          max="1000000"
           onChange={(e) => {
             setAmountPrice(e.target.value);
+            console.log(typeof e.target.value, e.target.value);
           }}
         ></input>
       </div>

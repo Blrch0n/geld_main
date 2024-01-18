@@ -184,7 +184,7 @@ app.post("/records", async (req, res) => {
 
 app.get("/records", async (req, res) => {
   const { authorization } = req.headers;
-  const { days } = req.query;
+  const { days, sort } = req.query;
 
   if (!authorization) {
     return res.status(401).json({
@@ -212,6 +212,29 @@ app.get("/records", async (req, res) => {
       return record.date > filterDate;
     });
 
+    // items.sort((a, b) => {
+    //   const DateA = new Date(a.date).getTime()
+    //   const DateB = new Date(b.date).getTime()
+    //   if (sort === "Recently") {
+    //     return -1;
+    //   }
+    //   if (sort === "Oldest") {
+    //     return 1;
+    //   }
+    //   return 0;
+    // });
+
+    if (sort === "Recently") {
+      filterData.sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+      );
+    }
+
+    if (sort === "Oldest") {
+      filterData.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      );
+    }
     res.json({
       records: filterData,
     });

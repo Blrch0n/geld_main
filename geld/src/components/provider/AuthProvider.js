@@ -16,6 +16,8 @@ export const AuthProvider = ({ children }) => {
   const [recordData, setRecordData] = useState();
   const [refresh, useRefresh] = useState(1);
   const [days, setDays] = useState(90);
+  const [sort, setSort] = useState("Recently");
+  const [checked, setChecked] = useState(true);
 
   const router = useRouter();
 
@@ -163,12 +165,13 @@ export const AuthProvider = ({ children }) => {
         },
         params: {
           days: days,
+          sort: sort,
         },
       });
       const { records } = data;
       console.log(records);
 
-      setRecordData(records.reverse());
+      setRecordData(records);
       setIsReadyRecord(true);
     } catch (err) {
       console.log(err);
@@ -195,6 +198,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     setIsReady(false);
+    showCategory();
 
     const token = localStorage.getItem("token");
 
@@ -208,7 +212,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    showCategory();
+    // showCategory();
     showRecords();
   }, [refresh]);
 
@@ -222,7 +226,10 @@ export const AuthProvider = ({ children }) => {
         addCategory,
         addRecord_,
         addDays,
+        checked,
+        setChecked,
         days,
+        setSort,
         recordData,
         isReadyRecord,
         isReadyCategory,

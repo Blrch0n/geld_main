@@ -10,14 +10,14 @@ export default function Card1() {
           <p>Cash</p>
           <p>
             {isReadyRecord &&
-            new Intl.NumberFormat().format(Math.abs(
+            `${new Intl.NumberFormat().format(Math.abs(
               recordData
                 .filter((record) => record.isExpense === false)
                 .reduce((a, b) => a + Number(b.amount), 0) -
                 recordData
                   .filter((record) => record.isExpense === true)
                   .reduce((a, b) => a + Number(b.amount), 0)
-            ))
+            ))}₮`
             }
               
           </p>

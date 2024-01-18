@@ -46,7 +46,7 @@ export default function CategorySideBar() {
               setIsOpenCategory(true);
             }}
           >
-            +Add Category
+            Add Category
           </p>
         </div>
       </main>

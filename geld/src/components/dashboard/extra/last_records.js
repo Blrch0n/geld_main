@@ -14,10 +14,7 @@ export default function LastRecords() {
           recordData.map((record, index) => {
             const Icon = icons[record.selectedIcon];
             const Color = record.IconColor;
-            const number = new Intl.NumberFormat("de-DE", {
-              style: "currency",
-              currency: "EUR",
-            }).format(record.amount);
+            const number = new Intl.NumberFormat().format(record.amount);
             return (
               <div
                 className="flex flex-row w-full py-[20px] h-[80px] items-center justify-between"
@@ -36,7 +33,7 @@ export default function LastRecords() {
                   </div>
                 </div>
                 <p style={{ color: record.isExpense ? "#23E01F" : "#F54949" }}>
-                  {number}
+                  {`${number}₮`}
                 </p>
               </div>
             );
