@@ -244,7 +244,7 @@ app.get("/records", async (req, res) => {
     });
   }
 });
-const port = 3002;
+const port = 3001;
 
 app.listen(port, () => {
   console.log(`Example app listen on port ${port}`);
