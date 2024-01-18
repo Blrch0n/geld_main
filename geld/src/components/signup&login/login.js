@@ -62,7 +62,7 @@ export default function SignUp() {
         ></input>
       </div>
       <div className="w-full h-fit text-center">
-        Don't have account? <Link href="/">Login</Link>
+        Don&apos;t have account? <Link href="/">Login</Link>
       </div>
     </form>
   );

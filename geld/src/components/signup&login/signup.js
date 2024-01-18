@@ -49,7 +49,7 @@ export default function Login() {
         ></input>
       </div>
       <div className="w-full h-fit text-center">
-        Don't have account? <Link href="/signup">Signup</Link>
+        Don&apos;t have account? <Link href="/signup">Signup</Link>
       </div>
     </section>
   );
