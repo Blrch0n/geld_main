@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <section className="w-full h-screen flex flex-col gap-[32px] bg-[#F3F4F6] relative">
       <Header></Header>
-      <div className="flex flex-col gap-[24px] w-[1200px] m-auto">
+      <div className="flex flex-col h-full gap-[24px] w-[1200px] m-auto">
         <div className="flex flex-row gap-[24px] w-full h-fit">
           <Card1></Card1>
           <Card2></Card2>
@@ -32,7 +32,7 @@ export default function Home() {
           <IncomeExpense1></IncomeExpense1>
           <IncomeExpense2></IncomeExpense2>
         </div>
-        <div>
+        <div className="w-full h-full">
           <LastRecords></LastRecords>
         </div>
       </div>

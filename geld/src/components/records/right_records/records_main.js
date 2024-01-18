@@ -18,7 +18,6 @@ export default function RecordsMain() {
               : record.selectedCategory.toLowerCase().includes(search);
           })
           .filter((record) => {
-            console.log("hi", record.amount, amountPrice);
             return Number(amountPrice) < Number(record.amount);
           })
           .filter((record) => {
@@ -34,7 +33,6 @@ export default function RecordsMain() {
           .map((record, index) => {
             const Icon = icons[record.selectedIcon];
             const Color = record.IconColor;
-            console.log(typeof record.amount, record.amount);
             const number = new Intl.NumberFormat().format(record.amount);
             return (
               <div

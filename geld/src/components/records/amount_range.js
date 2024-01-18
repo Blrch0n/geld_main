@@ -33,7 +33,6 @@ export default function AmountRange() {
           max="1000000"
           onChange={(e) => {
             setAmountPrice(e.target.value);
-            console.log(typeof e.target.value, e.target.value);
           }}
         ></input>
       </div>
